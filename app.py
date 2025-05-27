@@ -14,6 +14,14 @@ hide_streamlit_style = """
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+# Optional: Add the Aarambh Logo on Top
+st.markdown("""
+    <div style='text-align: center; padding: 10px;'>
+        <img src="https://i.ibb.co/Tr1Z0CN/aarambh-logo.png" alt="Aarambh Logo" style="width:200px;">
+        <h1 style='color:gold; margin-top:0;'>Order. Play. Dominate.</h1>
+    </div>
+""", unsafe_allow_html=True)
+
 # Fullscreen Lovable Prototype
 lovable_url = "https://aarambh-alert-composer.lovable.app/"
 iframe_code = f"""
