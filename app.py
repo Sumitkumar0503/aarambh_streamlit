@@ -1,12 +1,22 @@
 import streamlit as st
 
-# App configuration
-st.set_page_config(page_title="Aarambh - Order. Play. Dominate.", layout="wide")
+# Configure Streamlit for minimal layout
+st.set_page_config(page_title="Aarambh", layout="wide", initial_sidebar_state="collapsed")
 
-# Embed the Lovable prototype directly
+# Hide Streamlit’s default padding, menu, footer
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .block-container {padding: 0;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+# Fullscreen Lovable Prototype
 lovable_url = "https://aarambh-alert-composer.lovable.app/"
 iframe_code = f"""
-<iframe src="{lovable_url}" width="100%" height="1000" style="border:none;"></iframe>
+<iframe src="{lovable_url}" width="100%" height="1000px" style="border:none;"></iframe>
 """
-st.markdown("<h1 style='text-align:center;color:gold;'>Aarambh - Order. Play. Dominate.</h1>", unsafe_allow_html=True)
-st.components.v1.html(iframe_code, height=1000)
+st.components.v1.html(iframe_code, height=1000, scrolling=True)
